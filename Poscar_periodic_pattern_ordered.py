@@ -6,10 +6,10 @@ a = 3.19
 b = 3.19
 c = 14.874
 # Params
-num_lattice = 50
+num_lattice = 100
 rec_name = "POSCAR_pattern_ordered"
-start = (10, 10)
-size = 5
+start = (50, 50)
+size = 30
 #
 #
 pos_Mo = []

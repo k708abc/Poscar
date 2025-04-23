@@ -6,10 +6,10 @@ a = 3.19
 b = 3.19
 c = 14.874
 # Params
-num_lattice = 50
+num_lattice = 100
 rec_name = "POSCAR_pattern_circle"
-center = (10, 10)
-radius = 10
+center = (50, 50)
+radius = 30
 #
 #
 cx = center[0] - center[1] / 2

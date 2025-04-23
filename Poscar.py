@@ -6,12 +6,10 @@ a = 3.19
 b = 3.19
 c = 14.874
 # Params
-num_lattice = 10
-rec_name = "POSCAR"
+num_lattice = 20
+rec_name = "POSCAR_rand"
 defect_ratio = 0.1
-periodic_def = True
-per_def_x = 2
-per_def_y = 3
+
 #
 #
 

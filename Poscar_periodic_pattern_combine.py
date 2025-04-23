@@ -5,10 +5,10 @@ a = 3.19
 b = 3.19
 c = 14.874
 # Params
-num_lattice = 50
+num_lattice = 100
 rec_name = "POSCAR_pattern_combined"
-start = (18, 18)
-size = 15
+start = (50, 50)
+size = 30
 per_def_x = (3, 1)
 per_def_y = (1, 3)
 #
