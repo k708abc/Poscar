@@ -8,8 +8,8 @@ c = 14.874
 # Params
 num_lattice = 20
 rec_name = "POSCAR_per"
-per_def_x = (3, 1)
-per_def_y = (1, 3)
+per_def_x = (4, 0)
+per_def_y = (0, 4)
 #
 #
 

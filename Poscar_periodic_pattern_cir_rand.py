@@ -6,13 +6,14 @@ a = 3.19
 b = 3.19
 c = 14.874
 # Params
-num_lattice = 100
-rec_name = "POSCAR_clean_100"
-defect_ratio = 0
-
+num_lattice = 30
+rec_name = "POSCAR_pattern_circle_rand"
+center = (15, 15)
+radius = 7
 #
 #
-
+cx = center[0] - center[1] / 2
+cy = center[1] * math.sqrt(3) / 2
 pos_Mo = []
 pos_S = []
 step = 1 / num_lattice
@@ -30,26 +31,39 @@ base_S2 = [1 / 3, 2 / 3, 0.855174]
 base_S3 = [2 / 3, 1 / 3, 0.144826]
 base_S4 = [1 / 3, 2 / 3, 0.644826]
 
+
+def rand():
+    g = random.random()
+    return g
+
+
 for i in range(num_lattice):
     for j in range(num_lattice):
-
-        pos_Mo.append(
-            [
-                base_Mo1[0] / num_lattice + step * i,
-                base_Mo1[1] / num_lattice + step * j,
-                base_Mo1[2],
-            ]
-        )
-        pos_Mo.append(
-            [
-                base_Mo2[0] / num_lattice + step * i,
-                base_Mo2[1] / num_lattice + step * j,
-                base_Mo2[2],
-            ]
-        )
-        num_Mo += 2
-        rand = random.random()
-        if rand > defect_ratio:
+        x = i - j / 2
+        y = j * math.sqrt(3) / 2
+        r = ((x - cx) ** 2 + (y - cy) ** 2) / radius**2
+        g = rand()
+        if r > g:
+            pos_Mo.append(
+                [
+                    base_Mo1[0] / num_lattice + step * i,
+                    base_Mo1[1] / num_lattice + step * j,
+                    base_Mo1[2],
+                ]
+            )
+            num_Mo += 1
+        g = rand()
+        if r > g:
+            pos_Mo.append(
+                [
+                    base_Mo2[0] / num_lattice + step * i,
+                    base_Mo2[1] / num_lattice + step * j,
+                    base_Mo2[2],
+                ]
+            )
+            num_Mo += 1
+        g = rand()
+        if r > g:
             pos_S.append(
                 [
                     base_S1[0] / num_lattice + step * i,
@@ -58,8 +72,8 @@ for i in range(num_lattice):
                 ]
             )
             num_S += 1
-        rand = random.random()
-        if rand > defect_ratio:
+        g = rand()
+        if r > g:
             pos_S.append(
                 [
                     base_S2[0] / num_lattice + step * i,
@@ -68,8 +82,8 @@ for i in range(num_lattice):
                 ]
             )
             num_S += 1
-        rand = random.random()
-        if rand > defect_ratio:
+        g = rand()
+        if r > g:
             pos_S.append(
                 [
                     base_S3[0] / num_lattice + step * i,
@@ -78,8 +92,8 @@ for i in range(num_lattice):
                 ]
             )
             num_S += 1
-        rand = random.random()
-        if rand > defect_ratio:
+        g = rand()
+        if r > g:
             pos_S.append(
                 [
                     base_S4[0] / num_lattice + step * i,

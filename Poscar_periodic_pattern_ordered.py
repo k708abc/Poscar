@@ -1,15 +1,14 @@
 import math
-import random
 
 # Basic parameters
 a = 3.19
 b = 3.19
 c = 14.874
 # Params
-num_lattice = 100
-rec_name = "POSCAR_pattern_ordered"
-start = (50, 50)
-size = 30
+num_lattice = 30
+rec_name = "POSCAR_pattern_ordered_mini"
+start = (15, 15)
+size = 9
 #
 #
 pos_Mo = []
